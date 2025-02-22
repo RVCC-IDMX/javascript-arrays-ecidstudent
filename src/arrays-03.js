@@ -21,6 +21,11 @@
 function addUpArrayElements(arr) {
   // TODO: implement code
   // HINT: Use a loop (for or forEach) to sum the elements.
+  let sum = 0;
+  arr.forEach(function (num) {
+    sum += num;
+  });
+  return sum;
 }
 
 /**
@@ -31,6 +36,9 @@ function addUpArrayElements(arr) {
 function makeSquareNumbers(arr) {
   // TODO: implement code
   // HINT: Use the map() method.
+  return arr.map(function (num) {
+    return num * num;
+  });
 }
 
 /**
@@ -41,6 +49,9 @@ function makeSquareNumbers(arr) {
  */
 function filterForLargeWords(arr, length) {
   // TODO: implement code
+  return arr.filter(function (word) {
+    return word.length > length;
+  });
 }
 
 /**
@@ -50,6 +61,9 @@ function filterForLargeWords(arr, length) {
  */
 function findTheFirstEvenNumber(arr) {
   // TODO: implement code
+  return arr.find(function (num) {
+    return num % 2 === 0;
+  });
 }
 
 /**
@@ -60,6 +74,9 @@ function findTheFirstEvenNumber(arr) {
 function sortCaseSensitive(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and then use sort().
+  let copy = [...arr];
+  copy.sort();
+  return copy;
 }
 
 /**
@@ -70,6 +87,7 @@ function sortCaseSensitive(arr) {
  */
 function makeTheString(arr, separator) {
   // TODO: implement code
+  return arr.join(separator);
 }
 
 /**
@@ -79,6 +97,7 @@ function makeTheString(arr, separator) {
  */
 function reverseTheArray(arr) {
   // TODO: implement code
+  return arr.slice().reverse();
 }
 
 /**
@@ -90,6 +109,11 @@ function reverseTheArray(arr) {
 function makeMirrorArray(arr) {
   // TODO: implement code
   // HINT: Use slice (exclude the last element), reverse it, then concat.
+  if (arr.length <= 1) {
+    return [...arr];
+  }
+  const reversedPart = [...arr].slice(0, arr.length - 1).reverse();
+  return arr.concat(reversedPart);
 }
 
 /**
@@ -101,6 +125,10 @@ function makeMirrorArray(arr) {
 function dropRight(arr, n) {
   // TODO: implement code
   // HINT: Use slice() to return elements up to arr.length - n.
+  if (n >= arr.length) {
+    return [];
+  }
+  return arr.slice(0, arr.length - n);
 }
 
 /**
@@ -112,6 +140,7 @@ function dropRight(arr, n) {
 function dropLeft(arr, n) {
   // TODO: implement code
   // HINT: Use slice() starting at index n.
+  return arr.slice(n);
 }
 
 /**
@@ -122,6 +151,7 @@ function dropLeft(arr, n) {
  */
 function checkArrayForValue(arr, val) {
   // TODO: implement code
+  return arr.includes(val);
 }
 
 module.exports = {

@@ -20,6 +20,7 @@
  */
 function getFirstValue(arr) {
   // TODO: implement code
+  return arr[0];
 }
 
 /**
@@ -32,6 +33,7 @@ function getFirstValue(arr) {
  */
 function makeArray(a, b, c, d) {
   // TODO: implement code
+  return [a, b, c, d];
 }
 
 /**
@@ -40,6 +42,7 @@ function makeArray(a, b, c, d) {
  */
 function createFirstFivePrimes() {
   // TODO: implement code
+  return [2, 3, 5, 7, 11];
 }
 
 /**
@@ -50,6 +53,11 @@ function createFirstFivePrimes() {
 function createSizedArray(size) {
   // TODO: implement code
   // HINT: Use a for loop and push numbers from 0 to size - 1 into an array.
+  let result = [];
+  for (let i = 0; i < size; i++) {
+    result.push(i);
+  }
+  return result;
 }
 
 /**
@@ -62,6 +70,10 @@ function createSizedArray(size) {
 function modifyArrayByAdding(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and then use unshift() and push().
+  let copy = [...arr];
+  copy.unshift(1);
+  copy.push(1);
+  return copy;
 }
 
 /**
@@ -73,6 +85,14 @@ function modifyArrayByAdding(arr) {
 function modifyArrayByDeleting(arr) {
   // TODO: implement code
   // HINT: Create a shallow copy and use shift() and pop() if the array is not empty.
+  let copy = [...arr];
+  if (copy.length > 0) {
+    copy.shift();
+  }
+  if (copy.length > 0) {
+    copy.pop();
+  }
+  return copy;
 }
 
 /**
@@ -83,6 +103,7 @@ function modifyArrayByDeleting(arr) {
  */
 function findElementAtIndex(arr, index) {
   // TODO: implement code
+  return arr[index];
 }
 
 /**
@@ -94,6 +115,7 @@ function findElementAtIndex(arr, index) {
  */
 function findElementByValue(arr, value) {
   // TODO: implement code
+  return arr.indexOf(value);
 }
 
 /**
@@ -106,6 +128,8 @@ function findElementByValue(arr, value) {
  */
 function changeElementAtIndex(arr, index, value) {
   // TODO: implement code
+  arr[index] = value;
+  return arr;
 }
 
 /**
@@ -115,6 +139,7 @@ function changeElementAtIndex(arr, index, value) {
  */
 function makeStringFromArray(arr) {
   // TODO: implement code
+  return arr.join('');
 }
 
 /**
@@ -124,6 +149,7 @@ function makeStringFromArray(arr) {
  */
 function createShallowCopy(arr) {
   // TODO: implement code
+  return [...arr];
 }
 
 module.exports = {
